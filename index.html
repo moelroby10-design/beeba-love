@@ -1,22 +1,112 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#4b0b2b">
 <title>لحبيبتي حبيبة ❤️</title>
 <style>
-*{box-sizing:border-box}body{margin:0;min-height:100vh;background:radial-gradient(circle at top,#ffb8d0,#8e1649 70%,#3b0822);font-family:Tahoma,Arial,sans-serif;color:#fff;display:flex;align-items:center;justify-content:center;padding:22px;overflow-x:hidden}
-.wrap{width:min(100%,560px);text-align:center;position:relative;z-index:2;padding:25px 20px 32px;border:1px solid #ffffff55;background:#ffffff14;backdrop-filter:blur(8px);border-radius:28px;box-shadow:0 15px 50px #22001455}
-.kicker{letter-spacing:1px;color:#ffe0eb}.title{font-size:clamp(27px,7vw,40px);margin:12px 0;color:#fff1f7}.subtitle{color:#ffe1ec;font-size:17px;line-height:1.9}.btn{border:0;border-radius:30px;padding:13px 24px;background:#ffe0eb;color:#8c1749;font-size:17px;font-weight:bold;margin:16px 7px;cursor:pointer;box-shadow:0 5px 20px #440b2855}.btn:active{transform:scale(.98)}#letter{display:none;animation:fade .8s ease;margin-top:14px}.photo{width:min(100%,330px);max-height:460px;object-fit:cover;border-radius:22px;border:3px solid #fff8;box-shadow:0 10px 30px #26001455;margin:10px auto 20px}.message{background:#fff1f7;color:#7c1743;border-radius:20px;padding:20px;text-align:right;line-height:2.15;font-size:17px;white-space:pre-wrap}.song{display:inline-block;color:#8c1749;background:#ffe0eb;text-decoration:none;border-radius:30px;padding:13px 20px;font-weight:bold;margin:18px 5px}.closing{color:#ffe2ee;font-size:18px;margin:20px 0 5px}.heart{position:fixed;bottom:-30px;animation:rise linear forwards;opacity:.7;z-index:1;pointer-events:none}@keyframes rise{to{transform:translateY(-110vh) rotate(300deg);opacity:0}}@keyframes fade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-</style></head>
-<body><main class="wrap">
-<div class="kicker">رسالة صغيرة من قلبي ❤️</div><h1 class="title">حبيبتي الحبيبة .. بيبا 💗</h1>
-<p class="subtitle">في حاجة نفسي تقريها،<br>افتحي رسالتك يا أجمل حد في حياتي 🥹</p>
-<button class="btn" onclick="openLetter()">افتحي رسالتك 💌</button>
-<section id="letter"><img class="photo" src="photo.jpg" alt="صورتنا معًا">
-<div class="message">ل حبيبتي ونور عيني بيبا انتي اغلي حاجه عندي ❤😍
-انتي اجمل حاجه حصلت فحياتي وجودك جمبي كل حاجه احلي يمكن مش عارف اعبر عن اللي جويا اوي بس بجد انتي غاليه عندي اووي لو فضلت اقول فكلام مش هيوصف دا 🥹🥹 
-مش حابب تكوني زعلانه ومخنوقه لاني بحبك وبحب ضحكتك وبحب صوتك لما يكون رايق وبحب هزارك وبحبك تكوني دايما مبسوطه ي بيبا ونفسي دايما اشوفك مبسوطه ❤❤❤❤ف الاخر عايز اقولك بحبك انهارده وبكره وبحبك كل يوم عن اللي قبله يحبيبه والله ❤🥹</div>
-<a class="song" target="_blank" rel="noopener" href="https://www.youtube.com/results?search_query=%D9%85%D8%B9+%D8%A7%D9%84%D8%A3%D9%8A%D8%A7%D9%85+%D8%B1%D8%A7%D9%85%D9%8A+%D8%B5%D8%A8%D8%B1%D9%8A">شغّلي أغنيتنا 🎵 مع الأيام – رامي صبري</a>
-<p class="closing">بحبك النهارده وبكره وكل يوم أكتر ❤️</p></section></main>
-<script>function openLetter(){document.getElementById('letter').style.display='block';document.querySelector('.btn').style.display='none';}function heart(){let h=document.createElement('span');h.className='heart';h.textContent=['❤️','💗','💕','💖','💘'][Math.floor(Math.random()*5)];h.style.left=Math.random()*100+'vw';h.style.fontSize=(16+Math.random()*24)+'px';h.style.animationDuration=(5+Math.random()*5)+'s';document.body.appendChild(h);setTimeout(()=>h.remove(),10000)}setInterval(heart,650);</script>
+:root{--pink:#ffdce9;--rose:#a52d5c;--wine:#410b29;--glass:rgba(255,255,255,.13)}
+*{box-sizing:border-box}
+html,body{margin:0;width:100%;height:100%;font-family:Tahoma,Arial,sans-serif;background:#39091f;color:#fff}
+body{overflow:hidden}
+.page{position:fixed;inset:0;display:none;min-height:100svh;width:100%;overflow-y:auto;padding:calc(22px + env(safe-area-inset-top)) 18px calc(22px + env(safe-area-inset-bottom));align-items:center;justify-content:center;text-align:center;background:radial-gradient(ellipse at 50% 0%,#a63c66 0%,#641438 48%,#30071d 100%);}
+.page.active{display:flex;animation:appear .45s ease both}
+.panel{width:min(100%,540px);margin:auto;padding:clamp(22px,5vw,34px) clamp(17px,5vw,30px);border:1px solid #ffffff55;border-radius:28px;background:var(--glass);box-shadow:0 18px 60px #17000d66;backdrop-filter:blur(12px)}
+.eyebrow{font-size:14px;color:#ffe4ee;letter-spacing:.4px}
+h1{font-size:clamp(29px,8vw,43px);line-height:1.5;margin:12px 0;color:#fff5f8}
+h2{font-size:clamp(25px,7vw,34px);margin:8px 0 18px;color:#fff1f6}
+p{line-height:2;font-size:17px;color:#ffe7ef}
+.btn{appearance:none;border:0;border-radius:999px;padding:14px 25px;margin:8px 5px;background:linear-gradient(135deg,#fff0f5,#ffc5d9);color:#78183f;font-size:17px;font-weight:bold;box-shadow:0 8px 24px #1e001155;cursor:pointer}
+.btn.secondary{background:#ffffff20;color:#fff;border:1px solid #ffffff77;box-shadow:none}
+.btn:active{transform:scale(.98)}
+.nav{display:flex;justify-content:center;flex-wrap:wrap;gap:8px;margin-top:24px}
+.dots{display:flex;gap:7px;justify-content:center;margin:18px 0 0;direction:ltr}
+.dot{width:7px;height:7px;border-radius:50%;background:#ffffff55}.dot.on{width:22px;border-radius:9px;background:#ffe0eb}
+.song-icon{font-size:54px;margin:8px 0 12px;filter:drop-shadow(0 5px 15px #260014)}
+.audio-box{padding:18px;border-radius:22px;background:#ffffff18;border:1px solid #ffffff44;margin:18px 0}
+audio{width:100%;height:48px;display:block;filter:sepia(.15) saturate(.8)}
+.note{font-size:13px;color:#ffdfeb;line-height:1.8}
+.main-photo{display:block;width:min(100%,370px);height:min(57svh,570px);object-fit:contain;margin:12px auto 18px;border-radius:20px;border:2px solid #ffffffaa;box-shadow:0 12px 35px #18000d88;background:#220616}
+.letter{font-size:clamp(16px,4.3vw,19px);line-height:2.15;text-align:right;white-space:pre-line;color:#70163c;background:#fff0f6;border-radius:22px;padding:clamp(18px,5vw,27px);max-height:57svh;overflow-y:auto;box-shadow:inset 0 0 0 1px #f7c4d7}
+.end-page{background:#240514 url('ending.jpg') center/cover no-repeat}
+.end-page:before{content:"";position:fixed;inset:0;background:linear-gradient(180deg,#21000b44,#25000bb8 48%,#21000b55)}
+.end-panel{position:relative;background:#24000b55;border-color:#ffd7e588;box-shadow:0 10px 50px #16000988}
+.end-panel h1{font-size:clamp(30px,8vw,46px);text-shadow:0 3px 18px #5a001f}
+.end-heart{font-size:50px;filter:drop-shadow(0 0 15px #ff8eb4)}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+@media(max-height:650px){.panel{padding:18px}.main-photo{height:45svh}.letter{max-height:48svh}.nav{margin-top:12px}}
+</style>
+</head>
+<body>
+<section class="page active" id="page-0" aria-label="البداية">
+ <div class="panel">
+  <div class="eyebrow">رسالة صغيرة من قلبي ❤️</div>
+  <h1>حبيبتي الحبيبة .. بيبا 💗</h1>
+  <p>في حاجة نفسي تقريها،<br>افتحي مفاجأتك يا أجمل حد في حياتي 🥹</p>
+  <button class="btn" onclick="goTo(1,true)">ابدئي المفاجأة 💌</button>
+  <div class="dots"><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+ </div>
+</section>
+<section class="page" id="page-1" aria-label="الأغنية">
+ <div class="panel">
+  <div class="song-icon">🎵</div><div class="eyebrow">أغنيتنا سوا</div>
+  <h2>مع الأيام – رامي صبري</h2>
+  <p>دي أغنيتنا، اسمعيها قبل ما تكمّلي ❤️</p>
+  <div class="audio-box">
+   <audio id="ourSong" controls preload="metadata" playsinline>
+    <source src="song.mp3" type="audio/mpeg">
+    متصفحك لا يدعم تشغيل الصوت.
+   </audio>
+   <p class="note" id="audioStatus">الأغنية موجودة داخل الموقع. اضغطي تشغيل من مشغل الصوت.</p>
+  </div>
+  <button class="btn" onclick="goTo(2)">التالي: صورتنا 📷</button>
+  <button class="btn secondary" onclick="goTo(0)">السابق</button>
+  <div class="dots"><i class="dot"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i></div>
+ </div>
+</section>
+<section class="page" id="page-2" aria-label="الصورة">
+ <div class="panel">
+  <div class="eyebrow">أحلى صورة لينا ❤️</div><h2>كل لحظة معاكي غالية</h2>
+  <img class="main-photo" src="photo.jpg" alt="صورة تجمعكما">
+  <button class="btn" onclick="goTo(3)">اقري رسالتي 💌</button>
+  <button class="btn secondary" onclick="goTo(1)">السابق</button>
+  <div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot on"></i><i class="dot"></i><i class="dot"></i></div>
+ </div>
+</section>
+<section class="page" id="page-3" aria-label="الرسالة">
+ <div class="panel">
+  <div class="eyebrow">كلام من قلبي ليكي</div><h2>يا بيبا ❤️</h2>
+  <div class="letter">ل حبيبتي ونور عيني بيبا انتي اغلي حاجه عندي ❤😍
+انتي اجمل حاجه حصلت فحياتي وجودك جمبي كل حاجه احلي يمكن مش عارف اعبر عن اللي جويا اوي بس بجد انتي غاليه عندي اووي لو فضلت اقول فكلام مش هيوصف دا 🥹🥹
+مش حابب تكوني زعلانه ومخنوقه لاني بحبك وبحب ضحكتك وبحب صوتك لما يكون رايق وبحب هزارك وبحبك تكوني دايما مبسوطه ي بيبا ونفسي دايما اشوفك مبسوطه ❤❤❤❤
+ف الاخر عايز اقولك بحبك انهارده وبكره وبحبك كل يوم عن اللي قبله يحبيبه والله ❤🥹</div>
+  <button class="btn" onclick="goTo(4)">آخر مفاجأة ❤️</button>
+  <button class="btn secondary" onclick="goTo(2)">السابق</button>
+  <div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot on"></i><i class="dot"></i></div>
+ </div>
+</section>
+<section class="page end-page" id="page-4" aria-label="الخاتمة">
+ <div class="panel end-panel">
+  <div class="end-heart">❤️</div>
+  <h1>بحبك يا أجمل صدفة حصلت لي في حياتي يا حبيبة</h1>
+  <p>ربنا يخليكي ليا وتفضلي أجمل حاجة في أيامي كلها 💗</p>
+  <button class="btn secondary" onclick="goTo(3)">ارجعي للرسالة</button>
+  <div class="dots"><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot"></i><i class="dot on"></i></div>
+ </div>
+</section>
+<script>
+const pages=[...document.querySelectorAll('.page')];
+const song=document.getElementById('ourSong');
+function goTo(index,tryPlay=false){
+ pages.forEach((p,i)=>{p.classList.toggle('active',i===index);});
+ if(index===1 && tryPlay){
+   song.play().then(()=>{document.getElementById('audioStatus').textContent='الأغنية شغالة ❤️ تقدري توقفيها أو تتحكمي في الصوت من المشغل.';}).catch(()=>{document.getElementById('audioStatus').textContent='اضغطي زر التشغيل ▶️ في مشغل الأغنية لبدء الاستماع.';});
+ }
+ if(index!==1 && !song.paused){song.pause();}
+ window.scrollTo(0,0);
+}
+song.addEventListener('error',()=>{document.getElementById('audioStatus').textContent='تعذر تحميل ملف الأغنية. تأكدي من رفع song.mp3 بجانب index.html في GitHub.';});
+song.addEventListener('playing',()=>{document.getElementById('audioStatus').textContent='الأغنية شغالة ❤️';});
+</script>
 </body></html>
